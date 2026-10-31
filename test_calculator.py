@@ -1,5 +1,5 @@
 import pytest
-from calculator import add, subtract, multiply, divide
+from calculator import add, subtract, multiply, divide, square_root
 
 
 def test_add():
@@ -21,3 +21,11 @@ def test_divide():
 def test_divide_by_zero():
     with pytest.raises(ValueError):
         divide(5, 0)
+
+def test_square_root():
+    assert square_root(9) == 3
+
+
+def test_square_root_negative():
+    with pytest.raises(ValueError):
+        square_root(-4)
